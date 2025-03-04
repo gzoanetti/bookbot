@@ -1,15 +1,15 @@
-from stats import get_num_words
-import sys
-
 def main():
- #   if len(sys.argv) != 2:
-  #      print("Usage: Python 3 main.py <path_to_book>")
-   #     sys.exit(1)
-    book_path = sys.argv[1]
+    book_path = "books/frankenstein.txt"
     text = get_book_text(book_path)
     num_words = get_num_words(text)
     character_count = get_char_count(text)
     report_print(book_path, num_words, character_count)
+    
+
+def get_num_words(text):
+    words = text.split()
+    return len(words)
+
 
 def get_book_text(path):
     with open(path) as f:
